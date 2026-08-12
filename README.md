@@ -194,20 +194,21 @@ For bidding zone that have changed (splitted/merged) some codes are only valid f
 | ENTSOE_ENDPOINT_URL | Override the default ENTSO-E API endpoint URL. |
 
 ## Adding API key to your environment
-To streamline your usage of the `entsoe-py` package, you can add your API key to your environment. To save your API key to your environment, you can run the following commands.
-### Windows:
+To streamline your usage of the `entsoe-py` package, you can add your API key to your local environment. To save your API key to your environment, you can run one of the following commands.
+### Windows
 In a `cmd` command prompt, run the following:
 ```
 setx ENTSOE_API_KEY "<YOUR API KEY>)"
 ```
-### Linux/MacOS:
+### Linux/MacOS
 In a terminal, run the following:
 ```
 echo "export ENTSOE_API_KEY='<YOUR API KEY>)'" >> ~/.zshrc
 source ~/.zshrc
 ```
 
-When constructing a client in your code, you can replace your API key with `os.environ['ENTSOE_API_KEY']`. For example,
+### Usage
+When creating a client object in your code, you can replace your API key with `os.environ['ENTSOE_API_KEY']`. For example,
 ```python
 client = EntsoeRawClient(api_key=<YOUR API KEY>)
 pandasClient = EntsoePandasClient(api_key=<YOUR API KEY>))
